@@ -11,3 +11,12 @@ zh_CN:
         username: 用户名
         email: 邮箱
         integral: 积分
+      intergral_record:
+        score: 积分
+        created_at: 创建时间
+        integral_type: 积分类型
+      rule_type:
+        topic: 创建主题
+        top_five_post: 前五评论
+        not_top_five_post: 非前五评论
+        like: 被赞

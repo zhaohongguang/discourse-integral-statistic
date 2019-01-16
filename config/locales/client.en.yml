@@ -3,7 +3,7 @@ en:
     search_hint: 'username, email'
     user:
       summary:
-        integral: "Integral"
+        integral: Integral
     admin:
       integral:
         label: Integral
@@ -11,3 +11,12 @@ en:
         username: Username
         email: Email
         integral: Integral
+      intergral_record:
+        score: Integral
+        created_at: CreateAt
+        integral_type: IntegralType
+      rule_type:
+        topic: CreateTopic
+        top_five_post: TopFivePost
+        not_top_five_post: NotTopFivePost
+        like: ReceivedLike
