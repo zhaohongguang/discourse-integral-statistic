@@ -2,7 +2,7 @@
 # about:
 # version: 0.1
 # authors: zhaohongguang
-# url: https://github.com/zhaohongguang
+# url: https://github.com/zhaohongguang/discourse-integral-statistic
 
 
 register_asset "stylesheets/common/discourse-integral-statistic.scss"
@@ -171,36 +171,36 @@ after_initialize do
     end
   end
 
+  load File.expand_path("../serializers/integral_records_serializers.rb", __FILE__)
   load File.expand_path("../controllers/admin.rb", __FILE__)
   load File.expand_path("../controllers/integral_records.rb", __FILE__)
-  load File.expand_path("../serializers/integral_records_serializers.rb", __FILE__)
   
-  # require_dependency 'admin_constraint'
+  require_dependency 'admin_constraint'
   Discourse::Application.routes.prepend do
-    get "admin/integral-records" => "admin#index"
+    get "admin/users-integrals" => "admin#index"
     get "admin/user/integral_records" => "integral_records#index"
   end
 
   
 
   
-  require_dependency "application_controller"
-  class DiscourseIntegralStatistic::ActionsController < ::ApplicationController
-    requires_plugin PLUGIN_NAME
+  # require_dependency "application_controller"
+  # class DiscourseIntegralStatistic::ActionsController < ::ApplicationController
+  #   requires_plugin PLUGIN_NAME
 
-    before_action :ensure_logged_in
+  #   before_action :ensure_logged_in
 
-    def list
-      render json: success_json
-    end
-  end
+  #   def list
+  #     render json: success_json
+  #   end
+  # end
 
-  DiscourseIntegralStatistic::Engine.routes.draw do
-    get "/list" => "actions#list"
-  end
+  # DiscourseIntegralStatistic::Engine.routes.draw do
+  #   get "/list" => "actions#list"
+  # end
 
-  Discourse::Application.routes.append do
-    mount ::DiscourseIntegralStatistic::Engine, at: "/discourse-integral-statistic"
-  end
+  # Discourse::Application.routes.append do
+  #   mount ::DiscourseIntegralStatistic::Engine, at: "/discourse-integral-statistic"
+  # end
   
 end

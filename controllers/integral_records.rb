@@ -8,4 +8,8 @@ class ::IntegralRecordsController < ::ApplicationController
 
     render_serialized(integral_records, IntegralRecordsSerializer)
   end
+
+  def create
+    
+  end
 end
