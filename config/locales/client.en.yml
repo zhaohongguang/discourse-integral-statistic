@@ -1,0 +1,13 @@
+en:
+  js:
+    search_hint: 'username, email'
+    user:
+      summary:
+        integral: "Integral"
+    admin:
+      integral:
+        label: Integral
+      user:
+        username: Username
+        email: Email
+        integral: Integral

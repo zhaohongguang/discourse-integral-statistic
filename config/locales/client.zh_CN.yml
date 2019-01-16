@@ -1,0 +1,13 @@
+zh_CN:
+  js:
+    search_hint: '用户名、电子邮件'
+    user:
+      summary:
+        integral: 积分
+    admin:
+      integral:
+        label: 积分
+      user:
+        username: 用户名
+        email: 邮箱
+        integral: 积分

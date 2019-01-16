@@ -1,0 +1,37 @@
+<div class='username controls'>
+  {{text-field value=listFilter placeholder=searchHint}}
+</div>
+
+{{#conditional-loading-spinner condition=refreshing}}
+  {{#if model}}
+    <table class='table users-list grid'>
+      <thead>
+        <th>{{i18n 'admin.user.username'}}</th>
+        <th class='email-heading'>{{i18n 'admin.user.email'}}</th>
+        <th>{{i18n 'admin.user.integral'}}</th>
+        {{!-- {{admin-directory-toggle field='admin.user.integral' i18nKey='admin.user.integral' order=order ascending=ascending}} --}}
+        <th>&nbsp;</th>
+      </thead>
+      <tbody>
+        {{#each model as |user|}}
+          <tr class="user {{user.selected}} {{unless user.active 'not-activated'}}">
+            <td class="username">
+              <a href="{{unbound user.path}}" data-user-card="{{unbound user.username}}">
+                {{avatar user imageSize="small"}}
+              </a>
+              {{#link-to 'adminUser' user}}{{unbound user.username}}{{/link-to}}
+            </td>
+            <td class='email'>
+              {{~unbound user.email~}}
+            </td>
+            <td class='integral'>
+              {{#link-to 'adminUserIntegralsList' user}}{{~unbound user.integral~}}{{/link-to}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <p>{{i18n 'search.no_results'}}</p>
+  {{/if}}
+{{/conditional-loading-spinner}}

@@ -1,0 +1,4 @@
+plugins:
+  discourse_integral_statistic_enabled:
+    default: true
+    client: true

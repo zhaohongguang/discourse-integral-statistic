@@ -1,0 +1,13 @@
+<span class='value'>
+  <span class='number'>
+    {{#if isNumber}}
+      {{value}}
+    {{else}}
+      {{value}}
+    {{/if}}
+  </span>
+</span>
+<span class='label'>
+  {{#if icon}}{{d-icon icon}}{{/if}}
+  {{{i18n label count=value}}}
+</span>
