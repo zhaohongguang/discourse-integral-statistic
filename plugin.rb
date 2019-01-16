@@ -178,7 +178,7 @@ after_initialize do
   require_dependency 'admin_constraint'
   Discourse::Application.routes.prepend do
     get "admin/users-integrals" => "admin#index"
-    get "admin/user/integral_records" => "integral_records#index"
+    get "admin/user/:user_id/integral-records" => "integral_records#index"
   end
 
   
