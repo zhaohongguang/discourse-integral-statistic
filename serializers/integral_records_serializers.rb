@@ -9,6 +9,7 @@ class ::IntegralRecordsSerializer < ::ApplicationSerializer
              :score,
              :created_at,
              :post_id,
+             :note
 
   def integral_type
     object.try(:rule).try(:rule_type)

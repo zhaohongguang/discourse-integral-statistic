@@ -41,7 +41,6 @@ after_initialize do
   # 发布帖子或者回复帖子获取积分
   require_dependency 'post'
   class ::Post
-
     after_create :statistic_integral
 
     # IntegralRecord.create_integral_record(options)
@@ -85,7 +84,7 @@ after_initialize do
     def comfirm_integral_type
       integral_type = ''   # 积分类型
       
-      if self.is_reply?
+      if self.is_post?
         integral_type = Rule::RuleType::TOPIC
       end
 
@@ -179,6 +178,8 @@ after_initialize do
   Discourse::Application.routes.prepend do
     get "admin/users-integrals" => "admin#index"
     get "admin/user/:user_id/integral-records" => "integral_records#index"
+    get "admin/user/:user_id/integral-record/new" => "integral_records#new"
+    post "admin/user/:user_id/integral-record" => "integral_records#create"
   end
 
   

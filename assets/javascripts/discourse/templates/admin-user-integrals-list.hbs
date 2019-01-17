@@ -1,6 +1,6 @@
 <div class='customize-themes-header'>
   <div class="create-actions">
-    {{d-button label="admin.intergral_record.new" icon="plus" action="" class="btn-primary"}}
+    {{d-button label="admin.intergral_record.new" icon="plus" action="showCreateModal" class="btn-primary"}}
   </div>
 </div>
 
@@ -12,6 +12,7 @@
         <th>{{i18n 'admin.intergral_record.score'}}</th>
         <th>{{i18n 'admin.intergral_record.integral_type'}}</th>
         <th>{{i18n 'admin.intergral_record.created_at'}}</th>
+        <th>{{i18n 'admin.intergral_record.note'}}</th>
         {{!-- {{admin-directory-toggle field='admin.user.integral' i18nKey='admin.user.integral' order=order ascending=ascending}} --}}
         <th>&nbsp;</th>
       </thead>
@@ -29,6 +30,9 @@
             </td>
             <td class='created_at'>
               {{format-date record.created_at}}
+            </td>
+            <td class='created_at'>
+              {{~unbound record.note}}
             </td>
           </tr>
         {{/each}}

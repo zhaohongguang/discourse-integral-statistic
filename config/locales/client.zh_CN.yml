@@ -16,8 +16,11 @@ zh_CN:
         created_at: 创建时间
         integral_type: 积分类型
         new: 新建积分记录
+        note: 备注
       rule_type:
         topic: 创建主题
         top_five_post: 前五评论
         not_top_five_post: 非前五评论
         like: 被赞
+        abuse_vilify: 谩骂、诽谤他人
+        politics_religion: 发布政治、宗教等不当言论

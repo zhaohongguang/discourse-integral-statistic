@@ -14,10 +14,13 @@ en:
       intergral_record:
         score: Integral
         created_at: CreateAt
-        integral_type: IntegralType
-        new: New IntegralRecord
+        integral_type: Integral Type
+        new: New Integral Record
+        note: Note
       rule_type:
         topic: CreateTopic
         top_five_post: TopFivePost
         not_top_five_post: NotTopFivePost
-        like: ReceivedLike
+        like: Received Like
+        abuse_vilify: Insult Or Libel
+        politics_religion: Post Inappropriate Comments
