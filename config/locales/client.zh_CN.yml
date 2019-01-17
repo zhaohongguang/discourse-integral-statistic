@@ -15,6 +15,7 @@ zh_CN:
         score: 积分
         created_at: 创建时间
         integral_type: 积分类型
+        new: 新建积分记录
       rule_type:
         topic: 创建主题
         top_five_post: 前五评论

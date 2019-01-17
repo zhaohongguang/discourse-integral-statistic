@@ -15,6 +15,7 @@ en:
         score: Integral
         created_at: CreateAt
         integral_type: IntegralType
+        new: New IntegralRecord
       rule_type:
         topic: CreateTopic
         top_five_post: TopFivePost
