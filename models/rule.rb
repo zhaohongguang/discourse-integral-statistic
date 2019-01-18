@@ -10,6 +10,8 @@ class Rule < ActiveRecord::Base
 
     REWARD = [Rule::RuleType::TOPIC, Rule::RuleType::TOP_FIVE_POST, Rule::RuleType::NOT_TOP_FIVE_POST]
     PUNISHMENT = [Rule::RuleType::ABUSE_VILIFY, Rule::RuleType::POLITICS_RELIGION]
+
+    ALL = REWARD + PUNISHMENT
   end
 
   private

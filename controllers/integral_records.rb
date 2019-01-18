@@ -10,6 +10,6 @@ class ::IntegralRecordsController < ::ApplicationController
   end
 
   def create
-    
+
   end
 end

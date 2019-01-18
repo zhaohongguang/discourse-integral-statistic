@@ -171,15 +171,19 @@ after_initialize do
   end
 
   load File.expand_path("../serializers/integral_records_serializers.rb", __FILE__)
+  load File.expand_path("../serializers/rules_serializers.rb", __FILE__)
   load File.expand_path("../controllers/admin.rb", __FILE__)
   load File.expand_path("../controllers/integral_records.rb", __FILE__)
+  load File.expand_path("../controllers/rules.rb", __FILE__)
   
   require_dependency 'admin_constraint'
   Discourse::Application.routes.prepend do
     get "admin/users-integrals" => "admin#index"
     get "admin/user/:user_id/integral-records" => "integral_records#index"
-    get "admin/user/:user_id/integral-record/new" => "integral_records#new"
+
     post "admin/user/:user_id/integral-record" => "integral_records#create"
+
+    get "admin/rules" => "rules#index"
   end
 
   
