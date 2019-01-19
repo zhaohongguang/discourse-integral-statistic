@@ -8,9 +8,9 @@ export default Ember.Controller.extend({
   user_id: null,
   refreshing: false,
 
-  _filterReords: debounce(function(user_id) {
-    this._refreshRecords(user_id);
-  }, 250).observes("listFilter"),
+  // _filterReords: debounce(function(user_id) {
+  //   this._refreshRecords(user_id);
+  // }, 250).observes("listFilter"),
 
   // @computed("user_id")
   refreshRecords: function(user_id) {

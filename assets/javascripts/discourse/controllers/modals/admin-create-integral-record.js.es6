@@ -7,6 +7,11 @@ import { ajax } from "discourse/lib/ajax";
 export default Ember.Controller.extend(ModalFunctionality, {
   integralRecordController: Ember.inject.controller("adminUserIntegralsList"),
 
+  onShow() {
+    this.set("name", null);
+    this.set("model", this.get("types"));
+  },
+
   types: function() {
     var list = [];
     let rules_list_promise = Rule.find();
