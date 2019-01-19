@@ -24,3 +24,6 @@ en:
         like: Received Like
         abuse_vilify: Insult Or Libel
         politics_religion: Post Inappropriate Comments
+      rule:
+        reason: Reason
+        note: Note

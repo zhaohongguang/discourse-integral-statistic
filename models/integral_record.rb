@@ -8,15 +8,19 @@ class IntegralRecord < ActiveRecord::Base
     # 创建积分记录
     def create_integral_record(options)
       # 根据用户回复规则判断该积分记录是否重复增加
-      integral_records = IntegralRecord.where(post_id: options[:post_id], user_id: options[:user_id], rule_id: options[:rule_id])
-      return if integral_records.present?
+      integral_records = IntegralRecord.where(user_id: options[:user_id], rule_id: options[:rule_id])
+      if options[:post_id].present? && integral_records.present?
+        integral_records = integral_records.where(post_id: options[:post_id])
+        return if integral_records.present?
+      end
       integral_record = IntegralRecord.new
 
-      integral_record.post_id = options[:post_id]
+      integral_record.post_id = options[:post_id] if options[:post_id].present?
       integral_record.user_id = options[:user_id]
       integral_record.rule_id = options[:rule_id]
       integral_record.score = options[:score]
-      integral_record.radix_score = options[:radix_score]
+      integral_record.radix_score = options[:radix_score] || 1
+      integral_record.note = options[:note] if options[:note].present?
 
       integral_record.save
 

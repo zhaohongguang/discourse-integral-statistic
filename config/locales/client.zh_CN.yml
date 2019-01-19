@@ -24,3 +24,6 @@ zh_CN:
         like: 被赞
         abuse_vilify: 谩骂、诽谤他人
         politics_religion: 发布政治、宗教等不当言论
+      rule:
+        reason: 原因
+        note: 备注

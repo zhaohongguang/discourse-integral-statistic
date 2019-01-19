@@ -180,7 +180,6 @@ after_initialize do
   Discourse::Application.routes.prepend do
     get "admin/users-integrals" => "admin#index"
     get "admin/user/:user_id/integral-records" => "integral_records#index"
-
     post "admin/user/:user_id/integral-record" => "integral_records#create"
 
     get "admin/rules" => "rules#index"
