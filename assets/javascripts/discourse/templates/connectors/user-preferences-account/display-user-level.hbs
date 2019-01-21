@@ -1,0 +1,11 @@
+{{#if model.user_level}}
+  <div class="control-group pref-avatar">
+    <label class="control-label">{{i18n 'admin.user.level'}}</label>
+    <div class="controls">
+      {{#if model.user_level_icon}}
+        {{d-icon model.user_level_icon}}
+      {{/if}}
+      {{i18n (concat "user.rank." model.user_level)}}
+    </div>
+  </div>
+{{/if}}

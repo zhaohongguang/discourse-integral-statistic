@@ -155,6 +155,19 @@ after_initialize do
     delegate :integral, to: :user_stat
   end
 
+  require_dependency 'user_serializer'
+  class ::UserSerializer
+    attributes :user_level, :user_level_icon
+
+    def user_level
+      object.try(:level).try(:title)
+    end
+
+    def user_level_icon
+      object.try(:level).try(:user_level_icon)
+    end
+  end
+
   require_dependency 'user_summary_serializer'
   class ::UserSummarySerializer
     attributes :integral
@@ -162,11 +175,17 @@ after_initialize do
 
   require_dependency 'admin_user_list_serializer'
   class ::AdminUserListSerializer
+    attributes :user_level
+
     [:integral].each do |sym|
       attributes sym
       define_method sym do
         object.user_stat.send(sym)
       end
+    end
+
+    def user_level
+      object.try(:level).try(:title)
     end
   end
 

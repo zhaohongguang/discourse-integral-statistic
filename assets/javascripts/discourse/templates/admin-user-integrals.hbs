@@ -7,6 +7,7 @@
     <table class='table users-list grid'>
       <thead>
         <th>{{i18n 'admin.user.username'}}</th>
+        <th>{{i18n 'admin.user.level'}}</th>
         <th class='email-heading'>{{i18n 'admin.user.email'}}</th>
         <th>{{i18n 'admin.user.integral'}}</th>
         {{!-- {{admin-directory-toggle field='admin.user.integral' i18nKey='admin.user.integral' order=order ascending=ascending}} --}}
@@ -20,6 +21,11 @@
                 {{avatar user imageSize="small"}}
               </a>
               {{#link-to 'adminUser' user}}{{unbound user.username}}{{/link-to}}
+            </td>
+            <td class='level'>
+              {{#if user.user_level}}
+                {{i18n (concat "user.rank." user.user_level)}}
+              {{/if}}              
             </td>
             <td class='email'>
               {{~unbound user.email~}}

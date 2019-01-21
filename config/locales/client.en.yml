@@ -18,6 +18,7 @@ en:
         username: Username
         email: Email
         integral: Integral
+        level: User Level
       intergral_record:
         score: Integral
         created_at: CreateAt
