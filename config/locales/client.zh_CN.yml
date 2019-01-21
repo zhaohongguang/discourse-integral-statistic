@@ -4,6 +4,13 @@ zh_CN:
     user:
       summary:
         integral: 积分
+      rank:
+        darksteel: 玄铁
+        bronze: 青铜
+        silver: 白银
+        gold: 黄金
+        platinum: 铂金
+        diamond: 钻石
     admin:
       integral:
         label: 积分

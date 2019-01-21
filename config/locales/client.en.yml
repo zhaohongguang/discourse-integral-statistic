@@ -4,6 +4,13 @@ en:
     user:
       summary:
         integral: Integral
+      rank:
+        darksteel: Darksteel Division
+        bronze: Bronze Division
+        silver: Silver Division
+        gold: Gold Division
+        platinum: Platnum Division
+        diamond: Diamond Division
     admin:
       integral:
         label: Integral
