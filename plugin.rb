@@ -36,6 +36,15 @@ after_initialize do
     has_one :level, through: :user_level
 
     has_many :integral_records, class_name: "IntegralRecord", dependent: :destroy
+
+    after_create :create_user_level
+
+    def create_user_level
+      level  = Level.where(title: Level::Title::DARKSTEEL).last
+      user_level = UserLevel.new(level_id: level.id, user_id: self.id)
+      user_level.save!
+    end
+
   end
 
   # 发布帖子或者回复帖子获取积分
