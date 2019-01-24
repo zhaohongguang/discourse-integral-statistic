@@ -15,8 +15,8 @@ class Level < ActiveRecord::Base
     def level_from_integral(integral)
       levels = Level.order(from_score: :asc)
 
-      level = levels.first if integral < levels.first.from_score
-      level = levels.last if integral > levels.last.to_score
+      level = levels.first if integral.floor < levels.first.from_score
+      level = levels.last if integral.floor > levels.last.to_score
       level ||= levels.where("from_score <= ? AND to_score >= ?", integral.floor, integral.floor).last
 
       return level

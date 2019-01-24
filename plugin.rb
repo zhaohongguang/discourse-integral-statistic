@@ -44,7 +44,6 @@ after_initialize do
       user_level = UserLevel.new(level_id: level.id, user_id: self.id)
       user_level.save!
     end
-
   end
 
   # 发布帖子或者回复帖子获取积分
