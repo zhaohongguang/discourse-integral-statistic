@@ -27,6 +27,9 @@ class IntegralRecord < ActiveRecord::Base
       # 更新user_stat积分数据
       user_stat = UserStat.where(user_id: options[:user_id]).last
       user_stat.update_columns(integral: user_stat.integral + options[:score])
+
+      level = Level.level_from_integral(user_stat.integral.to_f)
+      UserLevel.update_user_level(options[:user_id], level.try(:id))
     end
   end
 

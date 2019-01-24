@@ -10,6 +10,19 @@ class Level < ActiveRecord::Base
     DIAMOND = 'diamond'
   end
 
+  class << self
+    # 根据分数判断等级
+    def level_from_integral(integral)
+      levels = Level.order(from_score: :asc)
+
+      level = levels.first if integral < levels.first.from_score
+      level = levels.last if integral > levels.last.to_score
+      level ||= levels.where("from_score <= ? AND to_score >= ?", integral.floor, integral.floor).last
+
+      return level
+    end
+  end
+
   private
     
 end
