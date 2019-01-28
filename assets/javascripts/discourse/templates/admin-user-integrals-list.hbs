@@ -4,8 +4,8 @@
   </div>
 </div>
 
-{{#conditional-loading-spinner condition=refreshing}}
-  {{#if model}}
+{{#if model}}
+  {{#load-more selector=".users-list tr" action="loadMore"}}
     <table class='table users-list grid'>
       <thead>
         <th>{{i18n 'admin.user.username'}}</th>
@@ -38,7 +38,10 @@
         {{/each}}
       </tbody>
     </table>
-  {{else}}
-    <p>{{i18n 'search.no_results'}}</p>
-  {{/if}}
-{{/conditional-loading-spinner}}
+  {{/load-more}}
+
+  {{conditional-loading-spinner condition=loading}}
+{{else}}
+  <p>{{i18n 'search.no_results'}}</p>
+{{/if}}
+
