@@ -1,6 +1,7 @@
 en:
   js:
     search_hint: 'username, email'
+    load_more: Load More
     user:
       summary:
         integral: Integral

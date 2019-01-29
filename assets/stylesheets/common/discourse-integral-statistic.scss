@@ -1,2 +1,28 @@
 .discourse-integral-statistic {
 }
+
+.load-more-separator {
+  // display: table;
+  line-height: 32px;
+  background-color: #fff;
+  white-space: nowrap;
+  border-spacing: 10px 0;
+  cursor: pointer;
+
+  td span {
+    background-color: $secondary;
+    color: $danger-medium;
+    padding: 0 8px;
+    font-size: $font-down-1;
+  }
+}
+
+.load-more-separator:before,
+.load-more-separator:after {
+  display: table-cell;
+  content: '';
+  width: 50%;
+  background: -webkit-linear-gradient(#eee,#eee) repeat-x left center;
+  background: linear-gradient(#eee,#eee) repeat-x left center;
+  background-size: 1px 1px;
+}

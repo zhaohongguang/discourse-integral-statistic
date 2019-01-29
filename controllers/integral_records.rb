@@ -3,7 +3,7 @@ class ::IntegralRecordsController < ::ApplicationController
   before_action :ensure_admin
 
   def index
-    limit = (params[:limit] || 20).to_i
+    limit = (params[:limit] || 100).to_i
     page = params[:page].to_i - 1
     if page < 0
       page = 0

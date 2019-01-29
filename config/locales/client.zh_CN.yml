@@ -1,6 +1,7 @@
 zh_CN:
   js:
     search_hint: '用户名、电子邮件'
+    load_more: 加载更多
     user:
       summary:
         integral: 积分

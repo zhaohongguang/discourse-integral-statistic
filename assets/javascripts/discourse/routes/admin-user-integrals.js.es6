@@ -11,7 +11,9 @@ export default Discourse.Route.extend({
       model: model,
       query: this.userFilter,
       showEmails: true,
-      refreshing: false
+      refreshing: false,
+      isHasUsers: true,
+      currentPage: 1,
     });
   }
 });

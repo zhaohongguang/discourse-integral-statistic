@@ -11,6 +11,8 @@ export default Discourse.Route.extend({
     controller.setProperties({
       model: model,
       user_id: this.user_id,
+      isHasUsers: true,
+      currentPage: 1,
     });
   },
 

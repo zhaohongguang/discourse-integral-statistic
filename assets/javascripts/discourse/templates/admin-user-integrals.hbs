@@ -3,7 +3,7 @@
 </div>
 
 {{#if model}}
-  {{#load-more selector=".users-list tr" action="loadMore"}}
+  {{#conditional-loading-spinner condition=refreshing}}
     <table class='table users-list grid'>
       <thead>
         <th>{{i18n 'admin.user.username'}}</th>
@@ -37,9 +37,20 @@
         {{/each}}
       </tbody>
     </table>
-  {{/load-more}}
+  {{/conditional-loading-spinner}}
 
-  {{conditional-loading-spinner condition=loading}}
+  <br>
+  {{#if isHasUsers}}
+    <tr class='load-more-separator' {{action 'loadMore'}}>
+      <td colspan="6">
+        <span>
+          {{i18n 'load_more'}}
+        </span>
+      </td>
+    </tr>
+  {{/if}}
+
+  {{!-- {{conditional-loading-spinner condition=loading}} --}}
 {{else}}
   <p>{{i18n 'search.no_results'}}</p>
 {{/if}}
